@@ -14,8 +14,7 @@ const PokeDetails = (props) => {
     });
 
 
-    useEffect( () => {
-        async function fetchData() {
+    useEffect( () => { 
             const url =  'https://pokeapi.co/api/v2/pokemon/' + pokemon
             axios.get(url).then((response) =>{
                 const result = response
@@ -26,9 +25,7 @@ const PokeDetails = (props) => {
                     image: result.data.sprites.front_default
                 })
                 console.log(pokeData);
-            })
-        }
-        fetchData();
+            })    
     },[]);
 
     return(
