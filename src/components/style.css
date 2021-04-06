@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(160, 183, 242);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0;
+
+}
+button{
+    padding: 2px;
+    margin: 5px;
+}
+
+label{
+    font-weight: bold;
+}
+
+.navbar{
+    background-color: tomato;
+    color:white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.flex{
+    border: 1px solid rgb(255, 153, 0);
+    background-color:rgb(255, 153, 0);
+    display: flex;
+    max-width: 1000px;
+    max-height: 600px;
+    margin: 10px auto;
+}
+
+.flex >div{
+    margin: 3px;
+    padding: 25px;
+    border: 1px solid rgb(240, 219, 59);
+    flex: 1 1 500px;
+    height: 500px;
+    background-color: rgb(242, 242, 242);
+}
+
+.pokemon >p {
+    padding-left: 100px;
+
+}
+
+.pokemon > img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

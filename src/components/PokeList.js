@@ -4,26 +4,18 @@ const PokeList = (props)=> {
 
     return(
         <div>
-            <h3>Items</h3>
             {props.poke.length > 0 ? (
-                <table>
-                    <tbody>
+                <ul>
                     {props.poke.map(item => {
-                    const {id,name} = item;
-                        return(            
-                            <tr key={id}>
-                                <td>
-                                    <ul>
-                                        <li >{name} </li>
-                                    </ul>
-                                </td>
-                                <td><button type="submit">Details</button></td>
-                            </tr>                                                  
-                        )
+                        const {id,name} = item;               
+                        return(                       
+                            <li key={id}>
+                                {name}
+                                <button type="submit" >Detalhes</button>
+                            </li>)
                     })}
-                    </tbody>
-                </table>
-            ) : ("Empty")
+                </ul>
+            ) : ("<Empty>")
             }
         </div>
     )

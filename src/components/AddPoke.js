@@ -17,27 +17,22 @@ const AddPoke = props => {
     const handleSubmit = e => {
         e.preventDefault();
         if (!pokes.name || !pokes.id) {
-            props.insertPoke(pokes)
-            setPokes(initialPokeState)
+            props.insertPoke(pokes);
+            setPokes(initialPokeState);
         }
     }
 
     return(
         <div>
-            <h3>Add item</h3>
-            <form>
-
-                <label>Nome do Pokemon: </label>
-                <input 
-                    type="text"
-                    name="name"
-                    value={pokes.name}
-                    onChange={handleChange}
-                />
-                
-                <button type="submit" onClick={handleSubmit} >Adicionar</button>
-
-            </form>
+            <label>Nome  do  Pokemon: </label>
+            <input 
+                type="text"
+                name="name"
+                value={pokes.name}
+                onChange={handleChange}
+            />
+            
+            <button type="submit" onClick={handleSubmit} >Adicionar</button>
             <br/>
         </div>
     )
