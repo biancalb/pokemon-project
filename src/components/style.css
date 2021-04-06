@@ -39,14 +39,19 @@ label{
     background-color: rgb(242, 242, 242);
 }
 
-.pokemon >p {
-    padding-left: 100px;
+.pokemon  {
+    width: 200px;
+    /* border: 1px solid rgb(126, 126, 126); */
+    margin-left: 100px;
 
 }
 
-.pokemon > img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+.pokemon > p  {
+    margin-left: 10px;
 }
+
+.pokemon > img  {
+    margin-left: 50px;
+}
+
+

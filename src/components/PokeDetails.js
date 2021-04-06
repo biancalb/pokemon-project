@@ -1,43 +1,43 @@
 import React, {useState, useEffect} from  'react'
 import axios from 'axios'
-import {getPokemon} from '../services/PokeServices.js'
+import './style.css'
 
 const PokeDetails = (props) => {
 
-    const [pokeData, setPokeData] = useState([]);
+    const [pokemon, setPokemon] = useState('wartortle');
+
+    const [pokeData, setPokeData] = useState({
+        name:"",
+        height:"",
+        weight:"",
+        image:"",
+    });
+
 
     useEffect( () => {
         async function fetchData() {
-            const response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
-            await loadingPokemon(response.data.results)
-            return response;
+            const url =  'https://pokeapi.co/api/v2/pokemon/' + pokemon
+            axios.get(url).then((response) =>{
+                const result = response
+                setPokeData({
+                    name: result.data.name,
+                    height: result.data.height,
+                    weight: result.data.weight,
+                    image: result.data.sprites.front_default
+                })
+                console.log(pokeData);
+            })
         }
         fetchData();
     },[]);
 
-    const loadingPokemon = async (data) => {
-        let _pokemonData = await Promise.all(data.map (async pokemon =>{
-            let pokemonRecord = await getPokemon (pokemon.url);
-            return pokemonRecord;
-        }))
-
-        setPokeData(_pokemonData)
-    }
-
     return(
-        <div>
-        {pokeData.map((pokemon,i) => {                            
-            const{name, weight,height, sprites} = pokemon;
-            return(
-                <div key={i} className="pokemon">
-                    <img src={sprites.front_default} alt={name}></img>
-                    <p>Nome: {name} </p> 
-                    <p>Peso: {weight}</p>
-                    <p>Altura: {height}</p>
-                </div>
-            )
-        })}
-    </div>
+        <div className="pokemon">
+            <img src={pokeData.image}></img>
+            <p>Nome: {pokeData.name}</p>
+            <p>Altura: {pokeData.height}</p>
+            <p>Peso: {pokeData.weight}</p>
+        </div>
     )
 }
 

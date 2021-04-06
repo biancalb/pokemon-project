@@ -11,7 +11,7 @@ const PokeList = (props)=> {
                         return(                       
                             <li key={id}>
                                 {name}
-                                <button type="submit" >Detalhes</button>
+                                <button type="submit">Detalhes</button>
                             </li>)
                     })}
                 </ul>

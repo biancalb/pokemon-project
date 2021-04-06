@@ -20,12 +20,12 @@ const PokeHome = () => {
                 Pokemon  API
             </div>
             <div className="flex">
-                <div className="section1">
+                <div>
                     <AddPoke insertPoke={insertPoke} />    
                     <PokeList poke={pokes} />
                 </div>
         
-                <div className="section2">
+                <div>
                     <PokeDetails />
                 </div>
 
