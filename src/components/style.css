@@ -41,17 +41,18 @@ label{
 
 .pokemon  {
     width: 200px;
-    /* border: 1px solid rgb(126, 126, 126); */
-    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 15%;
+    font-weight:600;
 
 }
 
-.pokemon > p  {
+.poke > img {
     margin-left: 10px;
-}
-
-.pokemon > img  {
-    margin-left: 50px;
 }
 
 

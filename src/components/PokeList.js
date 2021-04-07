@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import { UserContext } from '../context/userContext';
 
 const PokeList = (props)=> {
+
+    const {pokemon, setPokemon} = useContext(UserContext);
 
     return(
         <div>
@@ -11,7 +14,7 @@ const PokeList = (props)=> {
                         return(                       
                             <li key={id}>
                                 {name}
-                                <button type="submit">Detalhes</button>
+                                <button type="submit" onClick={() => setPokemon(name)}>Detalhes</button>
                             </li>)
                     })}
                 </ul>
